@@ -6,7 +6,7 @@
   "name": "After Mod",
   "description": "This is an example description! Tell everyone what your mod is about!",
   "authors": [
-    "Justin Wells!"
+    "Justin Wells"
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
@@ -19,8 +19,15 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.justinwells.aftermod.AfterMod"
+      "net.after.AfterMod"
+    ],
+    "client": [
+      "net.after.AfterClientMod"
+    ],
+    "server": [
+      "net.after.AfterServerMod"
     ]
+
   },
   "mixins": [
     "aftermod.mixins.json"

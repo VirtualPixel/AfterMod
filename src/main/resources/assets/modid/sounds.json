@@ -1,0 +1,26 @@
+{
+  "high_pitched_man_scream": {
+    "subtitle": "subtitles.after.high_pitched_man_scream",
+    "sounds": [
+      "modid:high_pitched_man_scream"
+    ]
+  },
+  "low_pitched_man_scream": {
+    "subtitle": "subtitles.after.low_pitched_man_scream",
+    "sounds": [
+      "modid:low_pitched_man_scream"
+    ]
+  },
+  "high_pitched_woman_scream": {
+    "subtitle": "subtitles.after.high_pitched_woman_scream",
+    "sounds": [
+      "modid:high_pitched_woman_scream"
+    ]
+  },
+  "low_pitched_woman_scream": {
+    "subtitle": "subtitles.after.low_pitched_woman_scream",
+    "sounds": [
+      "modid:low_pitched_woman_scream"
+    ]
+  }
+}

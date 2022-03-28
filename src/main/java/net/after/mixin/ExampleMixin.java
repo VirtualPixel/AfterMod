@@ -1,6 +1,5 @@
-package net.justinwells.aftermod.mixin;
+package net.after.mixin;
 
-import net.justinwells.aftermod.AfterMod;
 import net.minecraft.client.gui.screen.TitleScreen;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

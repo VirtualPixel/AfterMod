@@ -1,0 +1,2 @@
+V0.0.3 Changelog
+* Updated Phantonium Ore to work with Fortune and Silk Touch enchantments
