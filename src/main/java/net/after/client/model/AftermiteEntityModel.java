@@ -1,6 +1,6 @@
-/*package net.after.client.model;
+package net.after.client.model;
 
-
+/*
 import net.after.entity.AftermiteEntity;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
@@ -12,7 +12,7 @@ import org.spongepowered.include.com.google.common.collect.ImmutableList;
 public class AftermiteEntityModel extends EntityModel<AftermiteEntity> {
     private final ModelPart head;
     private final ModelPart body;
-    public <EnterEntityNameHere>(ModelPart rootModelPart) {
+    public AftermiteEntityModel(ModelPart rootModelPart) {
         this.head = modelPartBase.getChild(<EntityModelPartName here>);
         this.body = modelPartBase.getChild(<EntityModelPartName here>);
 
@@ -50,4 +50,5 @@ public class AftermiteEntityModel extends EntityModel<AftermiteEntity> {
         return ModelTransform.of(px, py, pz, x, y, z);
     }
 }
-*/
+
+ */

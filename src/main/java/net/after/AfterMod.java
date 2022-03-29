@@ -1,5 +1,6 @@
 package net.after;
 
+import net.after.blocks.SoulGlass;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -25,6 +26,7 @@ public class AfterMod implements ModInitializer {
 	//Block instances
 	public static final MarrowBlock MARROW_BLOCK = new MarrowBlock(FabricBlockSettings.of(Material.METAL).strength(1.0f).requiresTool().nonOpaque().dynamicBounds());
 	public static final PhantoniumOre PHANTONIUM_ORE = new PhantoniumOre(FabricBlockSettings.of(Material.STONE).strength(10.0f).requiresTool().dynamicBounds().nonOpaque());
+	public static final SoulGlass SOUL_GLASS = new SoulGlass(FabricBlockSettings.of(Material.GLASS).strength(2f).requiresTool().dynamicBounds());
 
 
 	//Item instances
@@ -63,6 +65,8 @@ public class AfterMod implements ModInitializer {
 		Registry.register(Registry.BLOCK, new Identifier("after", "phantonium_ore"), PHANTONIUM_ORE);
 		Registry.register(Registry.ITEM, new Identifier("after", "phantonium_ore"), new BlockItem(PHANTONIUM_ORE, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
 		Registry.register(Registry.ITEM, new Identifier("after", "raw_phantonium"), RAW_PHANTONIUM);
+		Registry.register(Registry.BLOCK, new Identifier("after", "soul_glass"), SOUL_GLASS);
+		Registry.register(Registry.ITEM, new Identifier("after", "soul_glass"), new BlockItem(SOUL_GLASS, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
 
 		//Register Mobs
 		FabricDefaultAttributeRegistry.register(AFTERMITE, AftermiteEntity.createMobAttributes());
