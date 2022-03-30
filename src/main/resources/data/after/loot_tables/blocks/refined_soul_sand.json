@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "after:soul_glass"
+          "name": "after:refined_soul_sand"
         }
       ],
       "conditions": [

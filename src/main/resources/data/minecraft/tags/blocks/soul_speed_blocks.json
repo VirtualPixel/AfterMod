@@ -1,8 +1,8 @@
 {
   "replace": false,
   "values": [
-    "after:marrow_block",
-    "after:phantonium_ore",
+    "minecraft:soul_sand",
+    "minecraft:soul_soil",
     "after:refined_soul_sand"
   ]
 }

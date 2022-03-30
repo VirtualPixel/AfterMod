@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "after:block/soul_sand",
-		"particle": "after:block/soul_sand"
+		"0": "after:block/refined_soul_sand",
+		"particle": "after:block/refined_soul_sand"
 	},
 	"elements": [
 		{
