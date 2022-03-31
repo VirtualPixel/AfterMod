@@ -4,6 +4,7 @@ import net.after.blocks.MarrowBlock;
 import net.after.blocks.PhantoniumOre;
 import net.after.blocks.RefinedSoulSand;
 import net.after.entity.AftermiteEntity;
+import net.after.items.PhantoniumIngot;
 import net.after.items.RawPhantonium;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -32,7 +33,7 @@ public class AfterMod implements ModInitializer {
 
 	//Item instances
 	public static final RawPhantonium RAW_PHANTONIUM = new RawPhantonium(new FabricItemSettings().group(ItemGroup.MISC));
-
+	public static final PhantoniumIngot PHANTONIUM_INGOT = new PhantoniumIngot(new FabricItemSettings().group(ItemGroup.MISC));
 
 
 	//Sound instances
@@ -64,11 +65,15 @@ public class AfterMod implements ModInitializer {
 
 		//Register Blocks/Items
 		Registry.register(Registry.BLOCK, new Identifier("after", "marrow_block"), MARROW_BLOCK);
-
 		Registry.register(Registry.ITEM, new Identifier("after", "marrow_block"), new BlockItem(MARROW_BLOCK, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS).equipmentSlot(itemStack -> EquipmentSlot.HEAD)));
+
 		Registry.register(Registry.BLOCK, new Identifier("after", "phantonium_ore"), PHANTONIUM_ORE);
 		Registry.register(Registry.ITEM, new Identifier("after", "phantonium_ore"), new BlockItem(PHANTONIUM_ORE, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+
 		Registry.register(Registry.ITEM, new Identifier("after", "raw_phantonium"), RAW_PHANTONIUM);
+
+		Registry.register(Registry.ITEM, new Identifier("after", "phantonium_ingot"), PHANTONIUM_INGOT);
+
 		Registry.register(Registry.BLOCK, new Identifier("after", "refined_soul_sand"), REFINED_SOUL_SAND);
 		Registry.register(Registry.ITEM, new Identifier("after", "refined_soul_sand"), new BlockItem(REFINED_SOUL_SAND, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
 
