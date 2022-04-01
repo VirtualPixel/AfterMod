@@ -1,12 +1,17 @@
 package net.after.blocks;
 
+import it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap;
 import net.after.AfterMod;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.OreBlock;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
 import java.util.ArrayList;
@@ -17,6 +22,16 @@ public class PhantoniumOre extends OreBlock {
     public int lastSoundPlayed;
     public int soundBeforeLastPlayed;
     public int rand;
+    private static final ThreadLocal<Object2ByteLinkedOpenHashMap<NeighborGroup>> FACE_CULL_MAP = ThreadLocal.withInitial(() -> {
+        Object2ByteLinkedOpenHashMap<NeighborGroup> object2ByteLinkedOpenHashMap = new Object2ByteLinkedOpenHashMap<NeighborGroup>(2048, 0.25f){
+
+            @Override
+            protected void rehash(int newN) {
+            }
+        };
+        object2ByteLinkedOpenHashMap.defaultReturnValue((byte)127);
+        return object2ByteLinkedOpenHashMap;
+    });
 
     @Override
     public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
@@ -33,6 +48,13 @@ public class PhantoniumOre extends OreBlock {
         }
 
     }
+
+    @Environment(EnvType.CLIENT)
+    public static boolean shouldDrawSide(BlockState state, BlockView world, BlockPos pos, Direction side, BlockPos blockPos){
+        state.getBlock();
+        return false;
+    }
+
 
     public SoundEvent playRandomSound(){
         if(sounds.isEmpty()){
@@ -59,4 +81,6 @@ public class PhantoniumOre extends OreBlock {
         sounds.add(AfterMod.LOW_PITCHED_WOMAN_SCREAM_EVENT);
         sounds.add(AfterMod.LOW_PITCHED_MAN_SCREAM_EVENT);
     }
+
+
 }

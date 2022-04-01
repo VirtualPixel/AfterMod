@@ -1,4 +1,4 @@
-{   "parent": "block/marrow_block",
+{   "parent": "after:block/marrow_block",
     "textures": {
       "particle": "#side"
     },

@@ -18,6 +18,7 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -26,9 +27,9 @@ import software.bernie.geckolib3.GeckoLib;
 
 public class AfterMod implements ModInitializer {
 	//Block instances
-	public static final MarrowBlock MARROW_BLOCK = new MarrowBlock(FabricBlockSettings.of(Material.METAL).strength(1.0f).requiresTool().nonOpaque().dynamicBounds());
-	public static final PhantoniumOre PHANTONIUM_ORE = new PhantoniumOre(FabricBlockSettings.of(Material.STONE).strength(10.0f).requiresTool().dynamicBounds().nonOpaque());
-	public static final RefinedSoulSand REFINED_SOUL_SAND = new RefinedSoulSand(FabricBlockSettings.of(Material.GLASS).strength(2f).requiresTool().dynamicBounds().luminance(20));
+	public static final MarrowBlock MARROW_BLOCK = new MarrowBlock(FabricBlockSettings.of(Material.METAL).strength(1.0f).requiresTool().nonOpaque());
+	public static final PhantoniumOre PHANTONIUM_ORE = new PhantoniumOre(FabricBlockSettings.of(Material.STONE).strength(4.0f).requiresTool().nonOpaque().collidable(false));
+	public static final RefinedSoulSand REFINED_SOUL_SAND = new RefinedSoulSand(FabricBlockSettings.of(Material.AGGREGATE).strength(2f).requiresTool().luminance(20).velocityMultiplier(0.4f).sounds(BlockSoundGroup.TUFF));
 
 
 	//Item instances

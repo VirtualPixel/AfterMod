@@ -1,7 +1,6 @@
 {
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
-	"parent": "after:block/side",
 	"textures": {
 		"0": "after:block/marrow_block",
 		"bottom": "after:block/marrow_block",
