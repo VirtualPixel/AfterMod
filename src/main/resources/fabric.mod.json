@@ -4,7 +4,7 @@
   "version": "${version}",
 
   "name": "After Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "description": "This mod adds new items, blocks, mobs, and an entire dimension.",
   "authors": [
     "Justin Wells"
   ],

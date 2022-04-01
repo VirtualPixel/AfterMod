@@ -11,6 +11,7 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
+import net.kyrptonaught.customportalapi.api.CustomPortalBuilder;
 import net.minecraft.block.Material;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
@@ -18,6 +19,7 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.Items;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
@@ -57,8 +59,6 @@ public class AfterMod implements ModInitializer {
 			FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, AftermiteEntity::new).dimensions(EntityDimensions.fixed(0.75f, 0.75f)).build()
 	);
 
-
-
 	@Override
 	public void onInitialize() {
 		//Initialize GeckoLib
@@ -86,5 +86,13 @@ public class AfterMod implements ModInitializer {
 		Registry.register(Registry.SOUND_EVENT, AfterMod.LOW_PITCHED_MAN_SCREAM, LOW_PITCHED_MAN_SCREAM_EVENT);
 		Registry.register(Registry.SOUND_EVENT, AfterMod.HIGH_PITCHED_WOMAN_SCREAM, HIGH_PITCHED_WOMAN_SCREAM_EVENT);
 		Registry.register(Registry.SOUND_EVENT, AfterMod.LOW_PITCHED_WOMAN_SCREAM, LOW_PITCHED_WOMAN_SCREAM_EVENT);
+
+		//Portal Builder
+		CustomPortalBuilder.beginPortal()
+				.frameBlock(REFINED_SOUL_SAND)
+				.lightWithItem(Items.TOTEM_OF_UNDYING)
+				.destDimID(new Identifier("the_nether"))
+				.tintColor(0, 0, 0)
+				.registerPortal();
 	}
 }

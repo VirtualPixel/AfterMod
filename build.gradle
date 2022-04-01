@@ -11,7 +11,8 @@ version = project.mod_version
 group = project.maven_group
 
 repositories {
-	maven { url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' }
+	maven { url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'}
+	maven { url = 'https://maven.kyrptonaught.dev'}
 }
 
 dependencies {
@@ -25,6 +26,11 @@ dependencies {
 
 	//GeckoLib
 	modImplementation 'software.bernie.geckolib:geckolib-fabric-1.18:3.0.35'
+
+	//Portal API
+	//modImplementation(include("net.kyrptonaught:customportalapi:${project.customportalapi_version}"))
+	modImplementation "net.kyrptonaught:customportalapi:${project.customportalapi_version}"
+	include "net.kyrptonaught:customportalapi:${project.customportalapi_version}"
 }
 
 processResources {
