@@ -24,7 +24,6 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import software.bernie.geckolib3.GeckoLib;
 
 
 public class AfterMod implements ModInitializer {
@@ -40,43 +39,43 @@ public class AfterMod implements ModInitializer {
 
 
 	//Sound instances
-	public static final Identifier HIGH_PITCHED_MAN_SCREAM = new Identifier("modid:high_pitched_man_scream");
+	public static final Identifier HIGH_PITCHED_MAN_SCREAM = new Identifier("the_after:high_pitched_man_scream");
 	public static SoundEvent HIGH_PITCHED_MAN_SCREAM_EVENT = new SoundEvent(HIGH_PITCHED_MAN_SCREAM);
 
-	public static final Identifier LOW_PITCHED_MAN_SCREAM = new Identifier("modid:low_pitched_man_scream");
+	public static final Identifier LOW_PITCHED_MAN_SCREAM = new Identifier("the_after:low_pitched_man_scream");
 	public static SoundEvent LOW_PITCHED_MAN_SCREAM_EVENT = new SoundEvent(LOW_PITCHED_MAN_SCREAM);
 
-	public static final Identifier HIGH_PITCHED_WOMAN_SCREAM = new Identifier("modid:high_pitched_woman_scream");
+	public static final Identifier HIGH_PITCHED_WOMAN_SCREAM = new Identifier("the_after:high_pitched_woman_scream");
 	public static SoundEvent HIGH_PITCHED_WOMAN_SCREAM_EVENT = new SoundEvent(HIGH_PITCHED_WOMAN_SCREAM);
 
-	public static final Identifier LOW_PITCHED_WOMAN_SCREAM = new Identifier("modid:low_pitched_woman_scream");
+	public static final Identifier LOW_PITCHED_WOMAN_SCREAM = new Identifier("the_after:low_pitched_woman_scream");
 	public static SoundEvent LOW_PITCHED_WOMAN_SCREAM_EVENT = new SoundEvent(LOW_PITCHED_WOMAN_SCREAM);
 
 	//Aftermite Instance
 	public static final EntityType<AftermiteEntity> AFTERMITE = Registry.register(
 			Registry.ENTITY_TYPE,
-			new Identifier("after", "aftermite"),
+			new Identifier("the_after", "aftermite"),
 			FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, AftermiteEntity::new).dimensions(EntityDimensions.fixed(0.75f, 0.75f)).build()
 	);
 
 	@Override
 	public void onInitialize() {
 		//Initialize GeckoLib
-		GeckoLib.initialize();
+		//GeckoLib.initialize();
 
 		//Register Blocks/Items
-		Registry.register(Registry.BLOCK, new Identifier("after", "marrow_block"), MARROW_BLOCK);
-		Registry.register(Registry.ITEM, new Identifier("after", "marrow_block"), new BlockItem(MARROW_BLOCK, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS).equipmentSlot(itemStack -> EquipmentSlot.HEAD)));
+		Registry.register(Registry.BLOCK, new Identifier("the_after", "marrow_block"), MARROW_BLOCK);
+		Registry.register(Registry.ITEM, new Identifier("the_after", "marrow_block"), new BlockItem(MARROW_BLOCK, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS).equipmentSlot(itemStack -> EquipmentSlot.HEAD)));
 
-		Registry.register(Registry.BLOCK, new Identifier("after", "phantonium_ore"), PHANTONIUM_ORE);
-		Registry.register(Registry.ITEM, new Identifier("after", "phantonium_ore"), new BlockItem(PHANTONIUM_ORE, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+		Registry.register(Registry.BLOCK, new Identifier("the_after", "phantonium_ore"), PHANTONIUM_ORE);
+		Registry.register(Registry.ITEM, new Identifier("the_after", "phantonium_ore"), new BlockItem(PHANTONIUM_ORE, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
 
-		Registry.register(Registry.ITEM, new Identifier("after", "raw_phantonium"), RAW_PHANTONIUM);
+		Registry.register(Registry.ITEM, new Identifier("the_after", "raw_phantonium"), RAW_PHANTONIUM);
 
-		Registry.register(Registry.ITEM, new Identifier("after", "phantonium_ingot"), PHANTONIUM_INGOT);
+		Registry.register(Registry.ITEM, new Identifier("the_after", "phantonium_ingot"), PHANTONIUM_INGOT);
 
-		Registry.register(Registry.BLOCK, new Identifier("after", "refined_soul_sand"), REFINED_SOUL_SAND);
-		Registry.register(Registry.ITEM, new Identifier("after", "refined_soul_sand"), new BlockItem(REFINED_SOUL_SAND, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+		Registry.register(Registry.BLOCK, new Identifier("the_after", "refined_soul_sand"), REFINED_SOUL_SAND);
+		Registry.register(Registry.ITEM, new Identifier("the_after", "refined_soul_sand"), new BlockItem(REFINED_SOUL_SAND, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
 
 		//Register Mobs
 		FabricDefaultAttributeRegistry.register(AFTERMITE, AftermiteEntity.createMobAttributes());
@@ -92,7 +91,8 @@ public class AfterMod implements ModInitializer {
 				.frameBlock(REFINED_SOUL_SAND)
 				.lightWithItem(Items.TOTEM_OF_UNDYING)
 				.destDimID(new Identifier("the_nether"))
-				.tintColor(0, 0, 0)
+				.tintColor(0, 0, 0).
+				onlyLightInOverworld()
 				.registerPortal();
 	}
 }

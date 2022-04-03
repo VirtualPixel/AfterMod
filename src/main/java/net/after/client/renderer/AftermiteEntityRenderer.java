@@ -16,7 +16,7 @@ public class AftermiteEntityRenderer extends MobEntityRenderer<AftermiteEntity, 
 
     @Override
     public Identifier getTexture(AftermiteEntity entity) {
-        return new Identifier("after", "textures/entity/aftermite/aftermite.png");
+        return new Identifier("the_after", "textures/entity/aftermite/aftermite.png");
     }
 }
 

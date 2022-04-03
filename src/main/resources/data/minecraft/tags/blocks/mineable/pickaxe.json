@@ -1,8 +1,8 @@
 {
   "replace": false,
   "values": [
-    "after:marrow_block",
-    "after:phantonium_ore",
-    "after:refined_soul_sand"
+    "the_after:marrow_block",
+    "the_after:phantonium_ore",
+    "the_after:refined_soul_sand"
   ]
 }

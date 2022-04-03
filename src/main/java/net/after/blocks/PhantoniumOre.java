@@ -22,8 +22,9 @@ public class PhantoniumOre extends OreBlock {
     public int lastSoundPlayed;
     public int soundBeforeLastPlayed;
     public int rand;
+
     private static final ThreadLocal<Object2ByteLinkedOpenHashMap<NeighborGroup>> FACE_CULL_MAP = ThreadLocal.withInitial(() -> {
-        Object2ByteLinkedOpenHashMap<NeighborGroup> object2ByteLinkedOpenHashMap = new Object2ByteLinkedOpenHashMap<NeighborGroup>(2048, 0.25f){
+        Object2ByteLinkedOpenHashMap<NeighborGroup> object2ByteLinkedOpenHashMap = new Object2ByteLinkedOpenHashMap<>(2048, 0.25f) {
 
             @Override
             protected void rehash(int newN) {
@@ -81,6 +82,4 @@ public class PhantoniumOre extends OreBlock {
         sounds.add(AfterMod.LOW_PITCHED_WOMAN_SCREAM_EVENT);
         sounds.add(AfterMod.LOW_PITCHED_MAN_SCREAM_EVENT);
     }
-
-
 }

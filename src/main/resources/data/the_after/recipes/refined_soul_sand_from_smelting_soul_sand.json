@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "group": "refined_soul_sand",
+  "ingredient": {
+    "item": "minecraft:soul_sand"
+  },
+  "result": "the_after:refined_soul_sand",
+  "experience": 2.5,
+  "cookingtime": 200
+}
