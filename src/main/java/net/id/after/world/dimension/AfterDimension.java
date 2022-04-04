@@ -1,4 +1,4 @@
-package net.id.after.world;
+package net.id.after.world.dimension;
 
 import net.id.after.After;
 import net.id.after.blocks.AfterBlocks;
