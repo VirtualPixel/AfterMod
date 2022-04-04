@@ -1,8 +1,12 @@
 package net.id.after.blocks.overworld;
 
 import net.minecraft.block.*;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.particle.ParticleTypes;
+import net.minecraft.server.world.ServerWorld;
+import net.minecraft.state.StateManager;
+import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
@@ -13,37 +17,44 @@ import net.minecraft.world.World;
 import java.util.Random;
 
 public class RefinedSoulSand extends SoulSandBlock {
+    public static final BooleanProperty ACTIVE = BooleanProperty.of("active");
 
     protected static final VoxelShape COLLISION_SHAPE = Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 14.0, 16.0);
 
     public RefinedSoulSand(AbstractBlock.Settings settings) {
         super(settings);
+        setDefaultState(getStateManager().getDefaultState().with(ACTIVE, true));
+    }
+
+    @Override
+    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+        builder.add(ACTIVE);
     }
 
     @Override
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
-        int rolls = 2;
-        int baseRandom = 3; //Lower the number == faster
-        Direction direction;
+            int rolls = 2;
+            int baseRandom = 3; //Lower the number == faster
+            Direction direction;
 
-        if (random.nextInt(baseRandom) != 0) {
-            return;
-        }
-
-        for(int i = 0; i < rolls; i++) {
-            direction = Direction.random(random);
-            BlockPos blockPos = pos.offset(direction);
-            BlockState blockState = world.getBlockState(blockPos);
-
-            if (isBlockTouchingAnotherBlock(state, blockState, world, blockPos, direction)){
+            if (random.nextInt(baseRandom) != 0) {
                 return;
             }
+            for (int i = 0; i < rolls; i++) {
+                direction = Direction.random(random);
+                BlockPos blockPos = pos.offset(direction);
+                BlockState blockState = world.getBlockState(blockPos);
 
-            double d = direction.getOffsetX() == 0 ? random.nextDouble() : 0.5 + (double) direction.getOffsetX() * 0.6;
-            double e = direction.getOffsetY() == 0 ? random.nextDouble() : 0.5 + (double) direction.getOffsetY() * 0.6;
-            double f = direction.getOffsetZ() == 0 ? random.nextDouble() : 0.5 + (double) direction.getOffsetZ() * 0.6;
-            world.addParticle(ParticleTypes.SOUL, (double) pos.getX() + d, (double) pos.getY() + e, (double) pos.getZ() + f, 0.0, 0.0, 0.0);
-        }
+                if (isBlockTouchingAnotherBlock(state, blockState, world, blockPos, direction)) {
+                    return;
+                }
+
+                double d = direction.getOffsetX() == 0 ? random.nextDouble() : 0.5 + (double) direction.getOffsetX() * 0.6;
+                double e = direction.getOffsetY() == 0 ? random.nextDouble() : 0.5 + (double) direction.getOffsetY() * 0.6;
+                double f = direction.getOffsetZ() == 0 ? random.nextDouble() : 0.5 + (double) direction.getOffsetZ() * 0.6;
+                world.addParticle(ParticleTypes.SOUL, (double) pos.getX() + d, (double) pos.getY() + e, (double) pos.getZ() + f, 0.0, 0.0, 0.0);
+            }
+
     }
 
     @Override
@@ -66,7 +77,19 @@ public class RefinedSoulSand extends SoulSandBlock {
         return false;
     }
 
-    private boolean isBlockTouchingAnotherBlock(BlockState state, BlockState blockState, World world, BlockPos blockPos, Direction direction){
+    private boolean isBlockTouchingAnotherBlock(BlockState state, BlockState blockState, World world, BlockPos blockPos, Direction direction) {
         return state.isOpaque() && blockState.isSideSolidFullSquare(world, blockPos, direction.getOpposite());
     } //If block is touching another block and not rendering that face
+
+    @Override
+    public void onLandedUpon(World world, BlockState state, BlockPos pos, Entity entity, float fallDistance) {
+        super.onLandedUpon(world, state, pos, entity, fallDistance);
+        world.setBlockState(pos, state.with(ACTIVE, false));
+    }
+
+    @Override
+    public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+        super.scheduledTick(state, world, pos, random);
+        world.setBlockState(pos, state.with(ACTIVE, true));
+    }
 }

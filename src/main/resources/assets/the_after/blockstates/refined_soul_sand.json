@@ -1,5 +1,10 @@
 {
   "variants": {
-    "": { "model": "the_after:block/refined_soul_sand" }
+    "active=false": {
+      "model": "the_after:block/refined_soul_sand_inactive"
+    },
+    "active=true": {
+      "model": "the_after:block/refined_soul_sand"
+    }
   }
 }
