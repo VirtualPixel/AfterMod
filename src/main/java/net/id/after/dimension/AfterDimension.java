@@ -1,3 +1,3 @@
-package net.after.dimension;
+package net.id.after.dimension;
 
 public class AfterDimension {}

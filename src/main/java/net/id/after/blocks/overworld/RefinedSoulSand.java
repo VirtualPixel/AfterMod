@@ -1,4 +1,4 @@
-package net.after.blocks;
+package net.id.after.blocks.overworld;
 
 import net.minecraft.block.*;
 import net.minecraft.entity.ai.pathing.NavigationType;

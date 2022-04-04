@@ -1,4 +1,4 @@
-package net.after.blocks;
+package net.id.after.blocks.decorative;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

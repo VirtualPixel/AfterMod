@@ -1,7 +1,9 @@
-package net.after.client.model;
+package net.id.after.client.model.entity;
 
 
-import net.after.entity.AftermiteEntity;
+import net.id.after.entities.passive.AftermiteEntity;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModel;
@@ -9,10 +11,11 @@ import net.minecraft.client.render.entity.model.EntityModelPartNames;
 import net.minecraft.client.util.math.MatrixStack;
 import org.spongepowered.include.com.google.common.collect.ImmutableList;
 
-public class AftermiteEntityModelBAK extends EntityModel<AftermiteEntity> {
+@Environment(EnvType.CLIENT)
+public class AftermiteModel extends EntityModel<AftermiteEntity> {
     private final ModelPart base;
 
-    public AftermiteEntityModelBAK(ModelPart modelPart){
+    public AftermiteModel(ModelPart modelPart){
         this.base = modelPart.getChild(EntityModelPartNames.CUBE);
     }
 

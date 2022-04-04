@@ -19,13 +19,13 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.after.AfterMod"
+      "net.id.after.After"
     ],
     "client": [
-      "net.after.AfterClientMod"
+      "net.id.after.After"
     ],
     "server": [
-      "net.after.AfterServerMod"
+      "net.id.after.After"
     ]
 
   },
