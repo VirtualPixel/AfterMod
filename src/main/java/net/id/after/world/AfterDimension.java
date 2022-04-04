@@ -1,5 +1,6 @@
 package net.id.after.world;
 
+import net.id.after.After;
 import net.id.after.blocks.AfterBlocks;
 import net.kyrptonaught.customportalapi.api.CustomPortalBuilder;
 import net.minecraft.item.Items;
@@ -17,6 +18,8 @@ public class AfterDimension {
     public static final RegistryKey<DimensionType> DIMENSION_TYPE = RegistryKey.of(Registry.DIMENSION_TYPE_KEY, locate(MOD_ID));
 
     public static void init(){
+        After.LOGGER.info("Registering custom portal for" + MOD_ID);
+
         CustomPortalBuilder.beginPortal()
                 .frameBlock(AfterBlocks.REFINED_SOUL_SAND)
                 .lightWithItem(Items.TOTEM_OF_UNDYING)

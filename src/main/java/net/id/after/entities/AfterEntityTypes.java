@@ -1,5 +1,15 @@
 package net.id.after.entities;
 
-public class AfterEntityTypes {
+import net.id.after.After;
 
+public class AfterEntityTypes {
+    //block
+
+    //hostile
+
+    //passive
+
+    public static void init(){
+        After.LOGGER.info("Registering entities for " + After.MOD_ID);
+    }
 }

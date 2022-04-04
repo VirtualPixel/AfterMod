@@ -8,9 +8,7 @@ import net.minecraft.util.registry.Registry;
 import java.util.ArrayList;
 
 public class AfterSoundEvents {
-    //private static final Set<SoundEvent> SOUNDS = new HashSet<>();
-    private static final ArrayList<SoundEvent> SOUNDS = new ArrayList<>();
-    public static ArrayList<SoundEvent> sounds = new ArrayList<>();
+    public static ArrayList<SoundEvent> SCREAMS = new ArrayList<>();
 
     public static final SoundEvent HIGH_PITCHED_MAN_SCREAM = registerSoundEvent("high_pitched_man_scream");
     public static final SoundEvent LOW_PITCHED_MAN_SCREAM = registerSoundEvent("low_pitched_man_scream");
@@ -22,17 +20,14 @@ public class AfterSoundEvents {
         SoundEvent event = new SoundEvent(id);
 
         if(name.contains("scream")){
-            sounds.add(event);
+            SCREAMS.add(event);
         }
+
 
         return Registry.register(Registry.SOUND_EVENT, new Identifier(After.MOD_ID + name), event);
     }
 
     public static void init(){
-        SOUNDS.forEach(AfterSoundEvents::register);
-
         After.LOGGER.info("Registering Sound Events for " + After.MOD_ID);
     }
-
-    public static void register(SoundEvent event) {Registry.register(Registry.SOUND_EVENT, event.getId(), event);}
 }

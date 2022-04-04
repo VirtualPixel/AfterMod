@@ -31,4 +31,8 @@ public class AfterModelLayers {
     public static EntityModelLayer register(String id, String layer, TexturedModelData data) {
         return register(After.locate(id), layer, data);
     }
+
+    public static void initClient() {
+        // Endless void.
+    }
 }

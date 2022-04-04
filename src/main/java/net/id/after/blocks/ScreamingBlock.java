@@ -30,7 +30,7 @@ public class ScreamingBlock extends Block {
     }
 
     public SoundEvent playRandomSound(){
-        int max = AfterSoundEvents.sounds.size() - 1;
+        int max = AfterSoundEvents.SCREAMS.size() - 1;
         int min = 0;
         int range = max - min + 1;
 
@@ -41,9 +41,7 @@ public class ScreamingBlock extends Block {
         soundBeforeLastPlayed = lastSoundPlayed;
         lastSoundPlayed = rand;
 
-        System.out.println(AfterSoundEvents.sounds.get(rand));
-
-        return AfterSoundEvents.sounds.get(rand);
+        return AfterSoundEvents.SCREAMS.get(rand);
 
     }
 }

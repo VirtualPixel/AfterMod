@@ -3,6 +3,7 @@ package net.id.after;
 import net.fabricmc.api.*;
 import net.id.after.blocks.AfterBlocks;
 import net.id.after.client.rendering.block.AfterBlockRenderers;
+import net.id.after.entities.AfterEntityTypes;
 import net.id.after.items.AfterItems;
 import net.id.after.util.AfterSoundEvents;
 import net.id.after.world.AfterDimension;
@@ -31,12 +32,15 @@ public class After implements ModInitializer, ClientModInitializer, DedicatedSer
 		AfterItems.init();
 		AfterBlocks.init();
 		AfterDimension.init();
+		AfterEntityTypes.init();
 	}
 
 	@Override
 	@Environment(EnvType.CLIENT)
 	public void onInitializeClient() {
 		AfterBlockRenderers.init();
+		//AfterModelLayers.initClient();
+		//AfterEntityRenderers.initClient();
 	}
 
 	@Override
