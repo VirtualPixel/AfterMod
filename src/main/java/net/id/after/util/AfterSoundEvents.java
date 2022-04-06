@@ -14,6 +14,10 @@ public class AfterSoundEvents {
     public static final SoundEvent LOW_PITCHED_MAN_SCREAM = registerSoundEvent("low_pitched_man_scream");
     public static final SoundEvent HIGH_PITCHED_WOMAN_SCREAM = registerSoundEvent("high_pitched_woman_scream");
     public static final SoundEvent LOW_PITCHED_WOMAN_SCREAM = registerSoundEvent("low_pitched_woman_scream");
+    public static final SoundEvent HIGH_PITCHED_MATT_SCREAM = registerSoundEvent("high_pitched_matt_scream");
+    public static final SoundEvent LOW_PITCHED_MATT_SCREAM = registerSoundEvent("low_pitched_matt_scream");
+    public static final SoundEvent HIGH_PITCHED_MATT_SCREAM_2 = registerSoundEvent("high_pitched_matt_scream_2");
+    public static final SoundEvent LOW_PITCHED_MATT_SCREAM_2 = registerSoundEvent("low_pitched_matt_scream_2");
 
     private static SoundEvent registerSoundEvent(String name){
         Identifier id = new Identifier(After.MOD_ID, name);

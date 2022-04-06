@@ -22,5 +22,29 @@
     "sounds": [
       "the_after:low_pitched_woman_scream"
     ]
+  },
+  "high_pitched_matt_scream": {
+    "subtitle": "subtitles.the_after.high_pitched_matt_scream",
+    "sounds": [
+      "the_after:high_pitched_matt_scream"
+    ]
+  },
+  "high_pitched_matt_scream_2": {
+    "subtitle": "subtitles.the_after.high_pitched_matt_scream_2",
+    "sounds": [
+      "the_after:high_pitched_matt_scream_2"
+    ]
+  },
+  "low_pitched_matt_scream": {
+    "subtitle": "subtitles.the_after.low_pitched_matt_scream",
+    "sounds": [
+      "the_after:low_pitched_matt_scream"
+    ]
+  },
+  "low_pitched_matt_scream_2": {
+    "subtitle": "subtitles.the_after.low_pitched_matt_scream_2",
+    "sounds": [
+      "the_after:low_pitched_matt_scream_2"
+    ]
   }
 }
