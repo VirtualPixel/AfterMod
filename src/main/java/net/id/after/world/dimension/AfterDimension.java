@@ -8,14 +8,19 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.World;
+import net.minecraft.world.dimension.DimensionOptions;
 import net.minecraft.world.dimension.DimensionType;
 
 import static net.id.after.After.MOD_ID;
 import static net.id.after.After.locate;
 
 public class AfterDimension {
-    public static final RegistryKey<World> AETHER_WORLD_KEY = RegistryKey.of(Registry.WORLD_KEY, locate(MOD_ID));
-    public static final RegistryKey<DimensionType> DIMENSION_TYPE = RegistryKey.of(Registry.DIMENSION_TYPE_KEY, locate(MOD_ID));
+    public static final RegistryKey<DimensionOptions> DIMENSION_KEY = RegistryKey.of(Registry.DIMENSION_KEY,
+            new Identifier(MOD_ID, "the_after"));
+    public static final RegistryKey<World> AETHER_WORLD_KEY = RegistryKey.of(Registry.WORLD_KEY,
+            DIMENSION_KEY.getValue());
+    public static final RegistryKey<DimensionType> DIMENSION_TYPE = RegistryKey.of(Registry.DIMENSION_TYPE_KEY,
+            new Identifier(MOD_ID, "the_after"));
 
     public static void init(){
         After.LOGGER.info("Registering custom portal for" + MOD_ID);
@@ -23,7 +28,7 @@ public class AfterDimension {
         CustomPortalBuilder.beginPortal()
                 .frameBlock(AfterBlocks.REFINED_SOUL_SAND)
                 .lightWithItem(Items.TOTEM_OF_UNDYING)
-                .destDimID(new Identifier("the_nether"))
+                .destDimID(locate(MOD_ID))
                 .tintColor(0, 0, 0)
                 .onlyLightInOverworld()
                 .registerPortal();

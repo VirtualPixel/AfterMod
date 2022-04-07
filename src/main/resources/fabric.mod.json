@@ -30,7 +30,7 @@
 
   },
   "mixins": [
-    "aftermod.mixins.json"
+    "after.mixins.json"
   ],
 
   "depends": {

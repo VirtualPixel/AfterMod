@@ -6,7 +6,7 @@
   "mixins": [
   ],
   "client": [
-
+    "LevelPropertiesMixin"
   ],
   "injectors": {
     "defaultRequire": 1

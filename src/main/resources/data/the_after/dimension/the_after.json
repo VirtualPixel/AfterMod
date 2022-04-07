@@ -1,0 +1,29 @@
+{
+  "type": {
+    "ultrawarm": false,
+    "natural": false,
+    "piglin_safe": true,
+    "respawn_anchor_works": true,
+    "bed_works": false,
+    "has_raids": false,
+    "has_skylight": false,
+    "has_ceiling": true,
+    "coordinate_scale": 1,
+    "ambient_light": 0.1,
+    "fixed_time": 18000,
+    "logical_height": 256,
+    "effects": "minecraft:the_nether",
+    "infiniburn": "#minecraft:infiniburn_nether",
+    "min_y": 48,
+    "height": 256
+  },
+  "generator": {
+    "type": "minecraft:noise",
+    "seed": 7890697384044634784,
+    "settings": "minecraft:overworld",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "minecraft:old_growth_birch_forest"
+    }
+  }
+}
