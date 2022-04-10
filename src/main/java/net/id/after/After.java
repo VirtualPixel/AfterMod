@@ -8,6 +8,7 @@ import net.id.after.items.AfterItems;
 import net.id.after.util.AfterSoundEvents;
 import net.id.after.world.biome.AfterBiomes;
 import net.id.after.world.dimension.AfterDimension;
+import net.id.after.world.feature.AfterFeatures;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,6 +33,7 @@ public class After implements ModInitializer, ClientModInitializer, DedicatedSer
 		AfterSoundEvents.init();
 		AfterItems.init();
 		AfterBlocks.init();
+		AfterFeatures.init();
 		AfterBiomes.init();
 		AfterDimension.init();
 		AfterEntityTypes.init();
