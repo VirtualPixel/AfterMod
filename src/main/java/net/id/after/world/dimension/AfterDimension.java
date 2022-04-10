@@ -17,7 +17,7 @@ import static net.id.after.After.locate;
 public class AfterDimension {
     public static final RegistryKey<DimensionOptions> DIMENSION_KEY = RegistryKey.of(Registry.DIMENSION_KEY,
             new Identifier(MOD_ID, "the_after"));
-    public static final RegistryKey<World> AETHER_WORLD_KEY = RegistryKey.of(Registry.WORLD_KEY,
+    public static final RegistryKey<World> AFTER_WORLD_KEY = RegistryKey.of(Registry.WORLD_KEY,
             DIMENSION_KEY.getValue());
     public static final RegistryKey<DimensionType> DIMENSION_TYPE = RegistryKey.of(Registry.DIMENSION_TYPE_KEY,
             new Identifier(MOD_ID, "the_after"));
