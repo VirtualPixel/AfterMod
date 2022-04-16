@@ -1,5 +1,6 @@
 package net.id.after.world.feature.placed_features;
 
+import net.id.after.world.feature.configured_features.AfterMiscConfiguredFeatures;
 import net.minecraft.block.Blocks;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.util.math.BlockPos;
@@ -10,17 +11,31 @@ import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.blockpredicate.BlockPredicate;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
+import net.minecraft.world.gen.feature.OrePlacedFeatures;
 import net.minecraft.world.gen.feature.PlacedFeature;
-import net.minecraft.world.gen.placementmodifier.BlockFilterPlacementModifier;
-import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
-import net.minecraft.world.gen.placementmodifier.PlacementModifier;
+import net.minecraft.world.gen.feature.PlacedFeatures;
+import net.minecraft.world.gen.placementmodifier.*;
 
 import java.util.List;
 
 import static net.id.after.After.locate;
 
-public class AfterPlacedFeatures {
+public class AfterPlacedFeatures extends OrePlacedFeatures {
     static final BlockPredicate IN_AIR = BlockPredicate.matchingBlock(Blocks.AIR, BlockPos.ORIGIN);
+    public static final RegistryEntry<PlacedFeature> ORE_PHANTONIUM;
+
+    private static List<PlacementModifier> modifiers(PlacementModifier countModifier, PlacementModifier heightModifier) {
+        return List.of(countModifier, SquarePlacementModifier.of(), heightModifier, BiomePlacementModifier.of());
+    }
+
+    private static List<PlacementModifier> modifiersWithCount(int count, PlacementModifier heightModifier) {
+        return modifiers(CountPlacementModifier.of(count), heightModifier);
+    }
+
+    private static List<PlacementModifier> modifiersWithRarity(int chance, PlacementModifier heightModifier) {
+        return modifiers(RarityFilterPlacementModifier.of(chance), heightModifier);
+    }
+
     public static final BlockPredicate IN_OR_ON_GROUND = BlockPredicate.allOf(
             BlockPredicate.hasSturdyFace(Vec3i.ZERO.down(), Direction.UP),
             BlockPredicate.solid(Vec3i.ZERO.down()),
@@ -35,6 +50,10 @@ public class AfterPlacedFeatures {
 
     static RegistryEntry<PlacedFeature> register(String id, RegistryEntry<? extends ConfiguredFeature<?, ?>> feature, PlacementModifier... modifiers) {
         return BuiltinRegistries.add(BuiltinRegistries.PLACED_FEATURE, locate(id), new PlacedFeature(RegistryEntry.upcast(feature), List.of(modifiers)));
+    }
+
+    static{
+        ORE_PHANTONIUM = PlacedFeatures.register("ore_phantonium", AfterMiscConfiguredFeatures.ORE_PHANTONIUM, modifiersWithCount(30, HeightRangePlacementModifier.trapezoid(YOffset.fixed(136), YOffset.fixed(32))));
     }
 
     public static void init() {

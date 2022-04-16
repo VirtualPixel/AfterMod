@@ -23,7 +23,7 @@ public class AfterSoundEvents {
         Identifier id = new Identifier(After.MOD_ID, name);
         SoundEvent event = new SoundEvent(id);
 
-        if(name.contains("scream")){
+        if(name.toLowerCase().contains("scream")){
             SCREAMS.add(event);
         }
 

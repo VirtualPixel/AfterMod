@@ -55,6 +55,7 @@ public class AfterBiomes {
         DefaultBiomeFeatures.addDefaultDisks(generationSettings);
         DefaultBiomeFeatures.addSprings(generationSettings);
         DefaultBiomeFeatures.addFrozenTopLayer(generationSettings);
+        AfterBiomeFeatures.addDefaultOres(generationSettings);
 
 
         return new Biome.Builder()
@@ -73,7 +74,6 @@ public class AfterBiomes {
                         .grassColor(4150633)
                         .build())
                 .spawnSettings(spawnSettings.build())
-                .generationSettings(createGenerationSettings(getStandardAfterFeatures()))
                 .generationSettings(generationSettings.build())
                 .build();
     }
