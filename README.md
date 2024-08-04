@@ -7,5 +7,5 @@ The living aren't meant to visit the land of the passed on - and the creatures w
 There's new goals, achievements, mobs, items, armor, ores, and plenty more to explore. Just remember not to get too comfortable in this world.
 
 # Requirements:
-* Fabric API
-* Minecraft V1.18.2
+* Latest Fabric API
+* Lateet Geckolib 
