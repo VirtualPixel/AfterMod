@@ -1,3 +1,5 @@
+# NOTE - 1.18.2 has been abandoned, everything will be done for 1.21 from now on.
+
 # After Mod Project
 
 **What is The After?**
