@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "the-after-project",
+	"version": "${version}",
+	"name": "The After Project",
+	"description": "The after project is a mod enabling a new dimension in the world of Minecraft - The After. This is the dimension where living creatures go after death, explore this new dimension and all the horrors that accompany it.",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/the-after-project/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.justinwells.theafter.TheAfterProject"
+		],
+		"client": [
+			"com.justinwells.theafter.TheAfterProjectClient"
+		]
+	},
+	"mixins": [
+		"the-after-project.mixins.json",
+		{
+			"config": "the-after-project.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
