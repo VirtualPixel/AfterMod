@@ -1,23 +1,23 @@
 # The After
 
-**The After** is a horror-themed Minecraft mod that introduces a brand-new dimension filled with eerie challenges, terrifying mobs, and unique gear, all while maintaining the feel of vanilla Minecraft. Step into a monochrome world where sanity is your greatest asset, and survival depends on your wits and your Phantonium gear.
+**The After** is a horror-themed Minecraft mod that introduces a brand-new dimension filled with eerie challenges, spectral mobs, and unique gear, all while maintaining the essence of vanilla Minecraft. Step into a haunting world where sanity is your greatest asset, and survival depends on your wits and your Phantonium gear.
 
 ## Features
 
 ### New Dimension: The After
 
-- **Portal Activation:** Enter the After by activating the portal in the Ancient City using a Totem of Undying.
-- **Monochrome World:** Explore a hauntingly beautiful, monochrome world where familiar mobs are non-hostile, as they’ve already passed on. They linger in limbo, afraid of becoming nothing.
+- **Portal Activation:** Enter The After by activating a portal found in the Ancient City using a Totem of Undying.
+- **Monochrome World:** Explore a hauntingly beautiful, monochrome world filled with spectral flora, decaying ruins, and lingering spirits. Familiar mobs are non-hostile, existing in a limbo state, fearful of fading into nothingness.
 
 ### New Mechanics
 
 - **Sanity System:**
   - **Sanity Levels:**
-    - **100%:** You’re safe, for now…
-    - **75%:** Be wary, the Afterlurk begins to follow you.
-    - **50%:** The Wraith’s screams can pierce your soul.
-    - **25%:** Beware, the Reaper is near. Run if you wish to survive.
-  - **Sanity Drain:** Various events and mobs will drain your sanity, leading to the activation of terrifying effects and the appearance of nightmarish creatures.
+    - **100%:** You’re safe, but the eerie silence is unsettling…
+    - **75%:** The Afterlurk begins to follow you, shadows start to move.
+    - **50%:** The Soul Reaver is near, a chilling presence that you can only hope to escape.
+    - **25%:** The Silence approaches, consuming everything in its path—run, hide, or be erased.
+  - **Sanity Drain:** Various events, blocks, and mobs drain your sanity, leading to hallucinations, visual disturbances, and the appearance of increasingly dangerous mobs.
 
 ### New Mobs
 
@@ -29,13 +29,14 @@
   - Spawns at 75% sanity.
   - Lurks behind objects, trying to stay out of sight.
   - Activates the “haunted” effect if it lingers too long, leading to strange happenings in the Overworld (e.g., doors and chests opening/closing, whispers, and inability to sleep).
-- **Wraith:**
+- **Soul Reaver:**
   - Spawns at 50% sanity.
-  - A ghostly entity that travels through objects, emitting terrifying screams that further drain your sanity.
-- **Reaper:**
+  - A tall, skeletal figure draped in ghostly robes, wielding a scythe made of Eclipsed Stone.
+  - Actively hunts the player, phasing through walls and teleporting short distances. Each attack drains sanity and deals heavy damage. Can only be harmed by ghostly weapons.
+- **The Silence:**
   - Spawns at 25% sanity.
-  - A silent, deadly foe that causes all sound to disappear as it approaches.
-  - Terrifies familiar mobs, causing them to flee. Follow them if you wish to escape the Reaper.
+  - A terrifying, amorphous shadow that consumes everything in its path.
+  - Causes all sound within an 8-chunk radius to cease, warning you of its approach. It cannot be fought—only evaded.
 
 ### New Ore and Gear: Phantonium
 
@@ -53,7 +54,7 @@
 ### Overworld Additions
 
 - **Coffins:** Use them as beds for a creepy aesthetic.
-- **Graveyards and Tombstones:** Add to the haunting atmosphere of villages.
+- **Graveyards and Tombstones:** Enhance the haunting atmosphere of villages with these new structures.
 
 ## Installation
 
